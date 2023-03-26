@@ -44,13 +44,14 @@ export const AnimesAPIProvider: React.FC<Props> = ({ children }) => {
     .catch(handleError);
   }, [page]);
 
-  function handleResponse(response) {
-    return response.json().then(function (json) {
+  function handleResponse(response: any) {
+    console.log(response);
+    return response.json().then(function (json: any) {
       return response.ok ? json : Promise.reject(json);
     });
   }
 
-  function handleData(data) {
+  function handleData(data: any) {
     const formatedData = data.data.Page.media.map((item: AnimeData) => ({
         id: item.id,
         siteUrl: item.siteUrl,
@@ -60,7 +61,7 @@ export const AnimesAPIProvider: React.FC<Props> = ({ children }) => {
     setAnimes(formatedData);
   }
 
-  function handleError(error) {
+  function handleError(error: any) {
     alert('Error, check console');
     console.error(error);
   }
