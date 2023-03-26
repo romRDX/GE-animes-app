@@ -1,0 +1,13 @@
+.side-menu {
+  display: flex;
+  width: 350px;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  background: #001529;
+  padding-top: 40px;
+
+  img {
+    margin: 20px auto 40px;
+  }
+}
