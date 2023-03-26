@@ -24,8 +24,10 @@ export const AnimesAPIProvider: React.FC<Props> = ({ children }) => {
   const [page, setPage] = useState<number>(1);
   const [animes, setAnimes] = useState<AnimeData[]>([]);
 
+  const apiUri = process.env.NEXT_PUBLIC_TEST_ENV || "";
+
   useEffect(() => {
-    fetch(process.env.NEXT_PUBLIC_TEST_ENV, {
+    fetch(apiUri, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
